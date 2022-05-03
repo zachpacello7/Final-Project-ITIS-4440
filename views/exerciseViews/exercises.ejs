@@ -1,0 +1,129 @@
+<%- include('../partials/header.ejs')%>
+<h1>Filter workouts</h1>
+<form class = "filterForm" method = "POST" action = "/exercises/AllExercises">
+
+    <label for = "equipment">Equipment:</label>
+    <input type = "text" name="equipment" > 
+
+    <label for = "target">Target Muscle:</label>
+    <input type = "text" name="target" > 
+
+    <button>Submit Filter</button>
+</form>
+<form class = "filterForm" method = "POST" action = "/exercises/allExercises/removeFilter">
+    <button>Clear Filter</button>
+
+</form>
+<h1>Exercises!</h1>
+<% if(filteredExerciseData.length == 0){ %>
+    <% apiExerciseData.forEach(data=>{ %>
+        <div class = "apiData">
+        <h1> Workout Name: <%= data.name %></h1>
+        <h3> Body Part: <%= data.bodyPart %></h3>
+        <h3> equipment: <%= data.equipment %></h3>
+        <h3>graphic</h3>
+        <img class = "image" src = "<%= data.gifUrl %>" height="150" width="150">
+        <h3> Target Muscle: <%= data.target %></h3>
+        <form>
+        <button class ="workoutButton"type = "submit" formmethod="POST" name = "userData" value ="<%=data.id%>" formaction="/exercises/userExercises">Add workout to Profile Page!</button>
+    </form>
+    </div>
+    
+    <% }) %>
+<% } else{ %>
+    <% filteredExerciseData.forEach(data=>{ %>
+        <div class = "apiData">
+
+        <h1> Workout Name: <%= data.name %></h1>
+        <h3> Body Part: <%= data.bodyPart %></h3>
+        <h3> equipment: <%= data.equipment %></h3>
+        <h3>graphic</h3>
+        <img class = "image" src = "<%= data.gifUrl %>" height="150" width="150">
+        <h3> Target Muscle: <%= data.target %></h3>
+    </div>
+
+    <% }) %>
+<% } %>
+<%- include('../partials/footer.ejs')%>
+<style>
+    .workoutButton{
+        background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  
+}
+    
+.apiData{
+    display: inline-block;
+    vertical-align: middle;
+    margin: auto;
+  width: 25%;
+  padding: 10px;
+    border: 1px solid black
+
+}
+.filterForm{
+    display: block;
+    text-align: center;
+}
+.graphic{
+
+    top: 50px;
+}
+.image{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+    header{
+        font-family: sans-serif;
+        text-align: center;
+        color: #424240;
+        font-weight: bold;
+        border:10px solid #b6a47f;
+        background-color: #BAD2EC;
+    
+            
+            
+    }
+    footer{
+        color: #424240;
+        font-family: sans-serif;
+        bottom:0;
+        width:100%;
+        height:60px;   /* Height of the footer */
+        background:#BAD2EC;
+        text-align: center;
+       
+    }
+    h1, h2, h3
+    {
+        text-align: center;
+    }
+    nav
+    {
+        font-family: sans-serif;
+        text-align: center;
+        font-weight: bold;
+        font-size: 110%
+        
+    }
+    a
+    {
+        text-decoration: none;
+        color: #030c02;
+    }
+    a:hover
+    {
+        text-decoration: overline underline;
+    }
+    </style>
+    

@@ -1,0 +1,144 @@
+<%- include('../partials/header.ejs')%>
+    <h1>
+        <%=data[0].category%>
+    </h1>
+    <% let num=0%>
+        <% if(category=="General" ){%>
+            <%data.forEach(recipe=>{%>
+                <h1>
+                    <%= ++num%>
+                </h1>
+                <div class="choosenRecipes">
+                    <h1>
+                        <%=recipe.title%>
+                    </h1>
+                    <a href="<%=recipe.url%>">Recipe information for <%= recipe.title%></a>
+                </div>
+                <%})%>
+                    <%}else{%>
+                        <%data.forEach(recipe=>{%>
+                            <h1>
+                                <%= ++num%>
+                            </h1>
+                            <div class="choosenRecipes">
+                                <h1>
+                                    <%=recipe.title%>
+                                </h1>
+                                <img class="brokenImage1" src="<%=recipe.img%>">
+                                <a class="recipeLink" href="<%=recipe.url%>">Click me to get Recipe information
+                                    for <%= recipe.title%></a>
+                                <form method="POST" action="/exercises/addNewRecipe">
+                                    <button class="userRecipeCategoryInfo" name="title" value="<%=recipe.title%>">Add
+                                        recipe to Profile Page!</button>
+                                    <input class="hiddenButton" name="image" value="<%= recipe.img%>">
+                                    <input class="hiddenButton" name="url" value="<%= recipe.url%>">
+
+                                </form>
+                            </div>
+                            <%})%>
+                                <%}%>
+                                    <%- include('../partials/footer.ejs')%>
+
+                                        <style>
+                                            .brokenImage1 {
+                                                display: block;
+                                                margin-left: auto;
+                                                margin-right: auto;
+                                                margin-top: 15px;
+                                            }
+
+                                            .userRecipeCategoryInfo {
+                                                margin-top: 60px;
+                                                background-color: #4CAF50;
+                                                border: none;
+                                                color: white;
+                                                padding: 15px 32px;
+                                                text-align: center;
+                                                text-decoration: none;
+                                                display: inline-block;
+                                                font-size: 16px;
+                                                cursor: pointer;
+                                            }
+
+                                            .hiddenButton {
+                                                display: none;
+                                            }
+
+                                            .choosenRecipes {
+                                                border: 1px solid black;
+                                                text-align: center;
+                                                margin-bottom: 25px;
+                                                padding-bottom: 50px;
+                                            }
+
+                                            .apiData {
+                                                display: inline-block;
+                                                vertical-align: middle;
+                                                margin: auto;
+                                                width: 25%;
+                                                padding: 10px;
+                                                border: 1px solid black
+                                            }
+
+                                            .filterForm {
+                                                display: block;
+                                                text-align: center;
+                                            }
+
+                                            .graphic {
+
+                                                top: 50px;
+                                            }
+
+                                            .image {
+                                                display: block;
+                                                margin-left: auto;
+                                                margin-right: auto;
+                                            }
+
+                                            header {
+                                                font-family: sans-serif;
+                                                text-align: center;
+                                                color: #424240;
+                                                font-weight: bold;
+                                                border: 10px solid #b6a47f;
+                                                background-color: #BAD2EC;
+
+
+
+                                            }
+
+                                            footer {
+                                                color: #424240;
+                                                font-family: sans-serif;
+                                                bottom: 0;
+                                                width: 100%;
+                                                height: 60px;
+                                                /* Height of the footer */
+                                                background: #BAD2EC;
+                                                text-align: center;
+
+                                            }
+
+                                            h1,
+                                            h2,
+                                            h3 {
+                                                text-align: center;
+                                            }
+
+                                            nav {
+                                                font-family: sans-serif;
+                                                text-align: center;
+                                                font-weight: bold;
+                                                font-size: 110%
+                                            }
+
+                                            a {
+                                                text-decoration: none;
+                                                color: #030c02;
+                                            }
+
+                                            a:hover {
+                                                text-decoration: overline underline;
+                                            }
+                                        </style>

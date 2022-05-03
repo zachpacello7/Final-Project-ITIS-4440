@@ -1,0 +1,94 @@
+<%- include('../partials/header.ejs')%>
+<div class="data">
+<form method = "POST" action = "/exercises/userChoosenRecipe">
+<label for ="food">Enter a food item you would like to get recipes for. </label>
+<input placeholder = "EX: Chicken, Steak, Potatoes"name="food" type="text">
+<button type = "submit">Submit</button>
+</form>
+</div>
+<footer>
+    
+    <p class>Page built by: The Obeast Team</p>
+</footer>
+
+<style>
+    .data{
+        text-align: center;
+        border: 1px solid black;
+        width: 100%;
+        height: 100%;
+    }
+    .recipeCategoryButtons{
+        text-align: center;
+    }
+    .apiData{
+        display: inline-block;
+        vertical-align: middle;
+        margin: auto;
+      width: 25%;
+      padding: 10px;
+        border: 1px solid black
+    
+    }
+    .filterForm{
+        display: block;
+        text-align: center;
+    }
+    .graphic{
+    
+        top: 50px;
+    }
+    .image{
+        display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+        header{
+            font-family: sans-serif;
+            text-align: center;
+            color: #424240;
+            font-weight: bold;
+            border:10px solid #b6a47f;
+            background-color: #BAD2EC;
+        
+                
+                
+        }
+        footer{
+            color: #424240;
+    font-family: sans-serif;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    /* Height of the footer */
+    background: #BAD2EC;
+    text-align: center;
+
+    bottom: 0;
+    left: 0;
+
+        }
+        h1, h2, h3
+        {
+            text-align: center;
+        }
+        nav
+        {
+            font-family: sans-serif;
+            text-align: center;
+            font-weight: bold;
+            font-size: 110%
+            
+        }
+        a
+        {
+            text-decoration: none;
+            color: #030c02;
+        }
+        a:hover
+        {
+            text-decoration: overline underline;
+        }
+        </style>
+        

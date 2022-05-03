@@ -1,0 +1,95 @@
+<%- include('../partials/header.ejs')%>
+<h1>Choose a category of recipes you are interested in!</h1>
+
+    <%data.forEach(recipe=>{%>
+        <div class = "recipeCategoryButtons">
+        <form>
+            <button class = "workoutButton" type = "submit" formmethod="POST" name = "recipe" value ="<%=recipe.category%>" formaction="/exercises/userRecipe"><%=recipe.category%></button>
+        </form>
+    </div>
+    <%})%>
+<%- include('../partials/footer.ejs')%>
+
+
+<style>
+       .workoutButton{
+        background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+    .recipeCategoryButtons{
+        text-align: center;
+    }
+    .apiData{
+        display: inline-block;
+        vertical-align: middle;
+        margin: auto;
+      width: 25%;
+      padding: 10px;
+        border: 1px solid black
+    
+    }
+    .filterForm{
+        display: block;
+        text-align: center;
+    }
+    .graphic{
+    
+        top: 50px;
+    }
+    .image{
+        display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+        header{
+            font-family: sans-serif;
+            text-align: center;
+            color: #424240;
+            font-weight: bold;
+            border:10px solid #b6a47f;
+            background-color: #BAD2EC;
+        
+                
+                
+        }
+        footer{
+            color: #424240;
+            font-family: sans-serif;
+            bottom:0;
+            width:100%;
+            height:60px;   /* Height of the footer */
+            background:#BAD2EC;
+            text-align: center;
+           
+        }
+        h1, h2, h3
+        {
+            text-align: center;
+        }
+        nav
+        {
+            font-family: sans-serif;
+            text-align: center;
+            font-weight: bold;
+            font-size: 110%
+            
+        }
+        a
+        {
+            text-decoration: none;
+            color: #030c02;
+        }
+        a:hover
+        {
+            text-decoration: overline underline;
+        }
+        </style>
+        

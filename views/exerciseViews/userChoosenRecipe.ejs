@@ -1,0 +1,119 @@
+<%- include('../partials/header.ejs')%>
+<%data.hits.forEach(recipe=>{%>
+    <div class = "userChoosenRecipeDivs">
+    <h1><%= recipe.recipe.label%></h1>
+    <img src="<%= recipe.recipe.images.THUMBNAIL.url%>"
+    <input type = "text" value = "<%=recipe.recipe.shareAs%>">
+    <h1>Ingredients for <%=recipe.recipe.label %></h1>
+    <%for(let i = 0; i< recipe.recipe.ingredientLines.length; i++){%>
+        <p><%=recipe.recipe.ingredientLines[i]%></p>
+    <%}%>
+        <p>Calories: <%= recipe.recipe.calories%></p>
+    <h2><a  href ="<%=recipe.recipe.shareAs%>">Click me for more Recipe information</a></h2>
+    <form class = "recipeProfile">
+        <button class = "userRecipeInfo" type = "submit" formmethod="POST" formaction="/exercises/addRecipe" name = "recipe" value ="<%=recipe.recipe.uri%>">Add recipe to Profile Page!</button>
+    </form>
+</div>
+<%})%>
+<%- include('../partials/footer.ejs')%>
+
+<style>
+    .userRecipeInfo{
+        background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+    }
+    .userChoosenRecipeDivs{
+        text-align: center;
+        border:1px solid black;
+        margin-bottom: 20px;
+        bottom: 15px;
+    }
+    .pointlessInfo{
+        visibility: hidden;
+    }
+    .recipeLink{
+        position: absolute;
+        margin-top: 160px;
+        margin-left: -15%;
+
+    }
+    .choosenRecipes{
+        border: 1px solid black;
+        text-align: center;
+        margin-bottom: 25px;
+        padding-bottom: 50px;
+    }
+    .apiData{
+        display: inline-block;
+        vertical-align: middle;
+        margin: auto;
+      width: 25%;
+      padding: 10px;
+        border: 1px solid black
+    
+    }
+    .filterForm{
+        display: block;
+        text-align: center;
+    }
+    .graphic{
+    
+        top: 50px;
+    }
+    .image{
+        display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+        header{
+            font-family: sans-serif;
+            text-align: center;
+            color: #424240;
+            font-weight: bold;
+            border:10px solid #b6a47f;
+            background-color: #BAD2EC;
+        
+                
+                
+        }
+        footer{
+            color: #424240;
+            font-family: sans-serif;
+            bottom:0;
+            width:100%;
+            height:60px;   /* Height of the footer */
+            background:#BAD2EC;
+            text-align: center;
+           
+        }
+        h1, h2, h3
+        {
+            text-align: center;
+        }
+        nav
+        {
+            font-family: sans-serif;
+            text-align: center;
+            font-weight: bold;
+            font-size: 110%
+            
+        }
+        a
+        {
+            text-decoration: none;
+            color: #030c02;
+        }
+        a:hover
+        {
+            text-decoration: overline underline;
+        }
+        </style>
+        

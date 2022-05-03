@@ -1,0 +1,27 @@
+{
+  "name": "itis-4440-exercise-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "bcrypt": "^5.0.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.6.0",
+    "ejs": "^3.0.2",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "https": "^1.0.0",
+    "method-override": "^3.0.0",
+    "mongodb": "^4.5.0",
+    "mongoose": "^6.3.0",
+    "morgan": "^1.10.0",
+    "node": "^16.14.2",
+    "node-fetch": "^3.2.3"
+  }
+}

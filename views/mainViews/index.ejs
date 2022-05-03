@@ -1,0 +1,73 @@
+<%- include('../partials/header.ejs')%>
+
+
+  <%- include('../partials/footer.ejs')%>
+
+<!--Here is the color scheme I decided to go with, feel free to change whatever you want
+https://icolorpalette.com/imagepalette/person_running_mountainous_landforms
+here are the stock images
+https://trainersync.com/blog/best-free-stock-photos-fitness-professionals/
+-->
+<style>
+  header {
+    font-family: sans-serif;
+    text-align: center;
+    color: #424240;
+    font-weight: bold;
+    border: 10px solid #b6a47f;
+    background-color: #BAD2EC;
+  }
+
+  footer {
+    color: #424240;
+    font-family: sans-serif;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    /* Height of the footer */
+    background: #BAD2EC;
+    text-align: center;
+
+    bottom: 0;
+    left: 0;
+    position: relative;
+
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+  }
+
+  nav {
+    font-family: sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 110%
+  }
+
+  a {
+    text-decoration: none;
+    color: #030c02;
+  }
+
+  a:hover {
+    text-decoration: overline underline;
+  }
+</style>
+<script>
+  $(document).ready(function () {
+    $("#bxslider").bxSlider({
+      auto: 3000,
+      minSlides: 1,
+      maxSlides: 1,
+      slideWidth: 500,
+      slideMargin: 40,
+      randomStart: true,
+      captions: true,
+      pager: true
+    });
+  });
+</script>

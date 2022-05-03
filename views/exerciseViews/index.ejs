@@ -1,0 +1,123 @@
+<%- include('../partials/header.ejs')%>
+<div id="demo" class="carousel slide" data-ride="carousel" style="background-color: #424240;">
+
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+      <li data-target="" data-slide-to="0" class="active"></li>
+      <li data-target="" data-slide-to="1"></li>
+      <li data-target="" data-slide-to="2"></li>
+      <li data-target="" data-slide-to="3"></li>
+    </ul>
+
+    <!-- The slideshow -->
+    <div class="carousel-inner" style="background-color: #424240;">
+      <div class="carousel-item active">
+        <div class="d-flex justify-content-center w-100 h-100">
+          <img src="/images/running.jpg" alt="Running picture here"
+            style="width: auto; width: auto; max-height: 900px; max-width: 900px;">
+        </div>
+
+      </div>
+      <div class="carousel-item">
+        <div class="d-flex justify-content-center w-100 h-100">
+          <img src="/images/weights.jpg" alt="Weights picture here"
+            style="width: auto; width: auto; max-height: 900px; max-width: 900px;">
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="d-flex justify-content-center w-100 h-100">
+          <img src="/images/food.jpg" alt="food picture here"
+            style="width: auto; width: auto; max-height: 900px; max-width: 900px;">
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="d-flex justify-content-center w-100 h-100">
+          <img src="/images/exercise.jpg" alt="food picture here"
+            style="width: auto; width: auto; max-height: 900px; max-width: 900px;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+
+  </div>
+
+  <div class="container">
+    <h3>Weclome to LifeLine!</h3>
+    <p>This is the start of your journey towards a healthier and happier future. Here at Lifeline you will be able to
+      research workouts and how to do them. You will also be able to look at different types of diets. We hope you stay and get fit.
+
+    </p>
+  </div>
+<%- include('../partials/footer.ejs')%>
+<!--Here is the color scheme I decided to go with, feel free to change whatever you want
+https://icolorpalette.com/imagepalette/person_running_mountainous_landforms
+-->
+<style>
+  header {
+    font-family: sans-serif;
+    text-align: center;
+    color: #424240;
+    font-weight: bold;
+    border: 10px solid #b6a47f;
+    background-color: #BAD2EC;
+  }
+
+  footer {
+    color: #424240;
+    font-family: sans-serif;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    /* Height of the footer */
+    background: #BAD2EC;
+    text-align: center;
+
+    bottom: 0;
+    left: 0;
+
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+  }
+
+  nav {
+    font-family: sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 110%
+  }
+
+  a {
+    text-decoration: none;
+    color: #030c02;
+  }
+
+  a:hover {
+    text-decoration: overline underline;
+  }
+</style>
+<script>
+  $(document).ready(function () {
+    $("#bxslider").bxSlider({
+      auto: 3000,
+      minSlides: 1,
+      maxSlides: 1,
+      slideWidth: 500,
+      slideMargin: 40,
+      randomStart: true,
+      captions: true,
+      pager: true
+    });
+  });
+</script>
